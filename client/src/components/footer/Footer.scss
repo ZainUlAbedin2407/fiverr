@@ -1,0 +1,158 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  color: #666;
+  margin: 50px 0px;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 40px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        min-width: 160px;
+
+        h2 {
+          font-size: 16px;
+          color: #555;
+        }
+
+        span {
+          font-weight: 300;
+          cursor: pointer;
+
+          &:hover {
+            color: #1dbf73;
+          }
+        }
+      }
+    }
+
+    hr {
+      margin: 50px 0px;
+      height: 0;
+      border-top: 1px solid #f5f1f1;
+      position: relative;
+      left: -20px;
+      width: calc(100% + 40px);
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .left {
+        width: max-content;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        h2 {
+          font-size: 20px;
+        }
+
+        span {
+          font-size: 13px;
+          white-space: nowrap;
+        }
+      }
+
+      .right {
+        width: max-content;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        .social {
+          display: flex;
+          gap: 20px;
+        }
+
+        .link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  // 📱 Responsive Styles
+  @media (max-width: 1024px) {
+    .container {
+      .top {
+        justify-content: space-around;
+
+        .item {
+          flex: 1 1 200px;
+        }
+      }
+
+      .bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .left,
+        .right {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .right {
+          gap: 20px;
+
+          .social {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      .top {
+        flex-direction: column;
+        gap: 30px;
+
+        .item {
+          align-items: center;
+          text-align: center;
+        }
+      }
+
+      .bottom {
+        .left span {
+          font-size: 12px;
+        }
+
+        .right .link span {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
