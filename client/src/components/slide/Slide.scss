@@ -1,110 +1,90 @@
-.slide {
-  display: flex;
-  justify-content: center;
-  padding: 80px 20px;
+.slideComponentWrapper {
+  width: 100%;
+  overflow: hidden;
 
-  .container {
+  .slide-swiper {
     width: 100%;
-    max-width: 1400px;
-    position: relative;
-  }
+    height: 100%;
 
-  .swiper {
-    padding: 0 30px; // arrow ke liye jagah
-  }
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-  }
-
-  // Arrows styling
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: 40px;
-    height: 40px;
-    background-color: #f3f3f3;
-    border-radius: 50%;
-    color: black;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-
-    &::after {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    &:hover {
-      background-color: #1dbf73;
-      color: white;
-    }
-  }
-
-  .swiper-button-prev {
-    left: 10px;
-  }
-
-  .swiper-button-next {
-    right: 10px;
-  }
-
-  // Dots
-  .swiper-pagination {
-    margin-top: 20px;
-    text-align: center;
-
-    .swiper-pagination-bullet {
-      background-color: #ccc;
-      opacity: 1;
-      margin: 0 4px;
-
-      &-active {
-        background-color: #1dbf73;
-      }
-    }
-  }
-
-  // ✅ Responsive
-  @media (max-width: 1024px) {
-    padding: 60px 15px;
-
-    .swiper {
-      padding: 0 20px;
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .swiper-button-prev,
     .swiper-button-next {
       width: 36px;
       height: 36px;
+      background-color: #f3f3f3;
+      border-radius: 50%;
+      color: black;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      &::after {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      &:hover {
+        background-color: #1dbf73;
+        color: white;
+      }
+    }
+
+    .swiper-button-prev {
+      left: 10px;
+    }
+
+    .swiper-button-next {
+      right: 10px;
+    }
+
+    .swiper-pagination {
+      margin-top: 20px;
+      text-align: center;
+
+      .swiper-pagination-bullet {
+        background-color: #ccc;
+        opacity: 1;
+        margin: 0 4px;
+
+        &-active {
+          background-color: #1dbf73;
+        }
+      }
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 40px 10px;
-
-    .swiper {
-      padding: 0 10px;
+  @media (max-width: 1024px) {
+    .slide-swiper {
+      .swiper-slide {
+        flex-shrink: 0;
+      }
     }
 
     .swiper-button-prev,
     .swiper-button-next {
-      width: 32px;
-      height: 32px;
-    }
-
-    .swiper-pagination {
-      margin-top: 15px;
+      width: 30px;
+      height: 30px;
     }
   }
 
+  @media (max-width: 768px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
   @media (max-width: 480px) {
     .swiper-button-prev,
     .swiper-button-next {
       width: 28px;
       height: 28px;
     }
-
+  
     .swiper {
       padding: 0 15px;
     }

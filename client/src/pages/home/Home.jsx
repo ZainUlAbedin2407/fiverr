@@ -18,6 +18,13 @@ const Home = () => {
         slidesPerView={4}
         slidesPerGroup={2}
         showPagination={true}
+        customBreakpoints={{
+          1280: { slidesPerView: 4, slidesPerGroup: 2 },
+          1024: { slidesPerView: 3, slidesPerGroup: 2 },
+          768: { slidesPerView: 2, slidesPerGroup: 1 },
+          480: { slidesPerView: 1.3, slidesPerGroup: 1 },
+          0: { slidesPerView: 1.1, slidesPerGroup: 1 },
+        }}
       />
       <div className="features">
         <div className="container">
@@ -189,9 +196,16 @@ const Home = () => {
       <Slide
         items={projects}
         renderItem={(project) => <ProjectCard item={project} />}
-        slidesPerView={5}
+        slidesPerView={4}
         slidesPerGroup={2}
         showPagination={true}
+        customBreakpoints={{
+          1280: { slidesPerView: 4, slidesPerGroup: 2 },
+          1024: { slidesPerView: 3, slidesPerGroup: 2 },
+          768: { slidesPerView: 2, slidesPerGroup: 1 },
+          480: { slidesPerView: 1.3, slidesPerGroup: 1 },
+          0: { slidesPerView: 1, slidesPerGroup: 1 },
+        }}
       />
     </div>
   );

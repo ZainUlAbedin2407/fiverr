@@ -1,4 +1,3 @@
-
 export const cards = [
   {
     id: 1,
@@ -181,5 +180,17 @@ export const gigs = [
     price: 110,
     star: 4,
     username: "Wilton Hunt",
+  },
+];
+
+export const gigSlideImages = [
+  {
+    src: "https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    src: "https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    src: "https://images.pexels.com/photos/1054777/pexels-photo-1054777.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
 ];
