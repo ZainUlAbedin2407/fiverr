@@ -1,11 +1,23 @@
 import React from "react";
-import "./GigImage.scss";
 
-const GigImage = ({ src, alt }) => {
+const GigImage = ({ src }) => {
+  const handleError = (e) => {
+    e.target.onerror = null;
+    e.target.src = "/img/no-image.webp";
+  };
+
   return (
-    <div className="gigImage">
-      <img src={src} alt={alt} />
-    </div>
+    <img
+      src={src || "/img/no-image.webp"}
+      alt="gig"
+      onError={handleError}
+      style={{
+        width: "100%",
+        height: "400px",
+        objectFit: "contain",
+        borderRadius: "8px",
+      }}
+    />
   );
 };
 

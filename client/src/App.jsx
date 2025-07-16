@@ -12,14 +12,24 @@ import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import "./App.scss";
 import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from "@tanstack/react-query";
 
 function App() {
+  const queryClient = new QueryClient();
+
   const Layout = () => {
     return (
       <>
-        <Navbar />
-        <Outlet />
-        <Footer />
+        <QueryClientProvider client={queryClient}>
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </QueryClientProvider>
       </>
     );
   };
@@ -61,22 +71,18 @@ function App() {
           path: "/message/:id",
           element: <Message />,
         },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
       ],
     },
-    // {
-    //   path: "/register",
-    //   element: <Register />,
-    // },
-    {
-      path: "/login",
-      element: <Login />,
-    },
   ]);
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

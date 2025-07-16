@@ -21,18 +21,18 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: "http://localhost:5173",
-    credential: true,
+    credentials: true,
   })
 );
 
 // Routes
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
-app.use("/api/users", gigRoute);
-app.use("/api/users", orderRoute);
-app.use("/api/users", conversationRoute);
-app.use("/api/users", messageRoute);
-app.use("/api/users", reviewRoute);
+app.use("/api/gigs", gigRoute);
+app.use("/api/orders", orderRoute);
+app.use("/api/conversations", conversationRoute);
+app.use("/api/messages", messageRoute);
+app.use("/api/reviews", reviewRoute);
 
 // Error handler
 app.use(errorHandler);

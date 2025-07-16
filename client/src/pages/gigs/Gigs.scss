@@ -98,18 +98,19 @@
       }
     }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-
-    }
-    @media screen and (max-width: 659px) {
       .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
         justify-content: center;
+  
       }
-    }
+      @media screen and (max-width: 659px) {
+        .cards {
+          justify-content: center;
+        }
+      }
+
   }
 
 }
