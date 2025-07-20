@@ -41,8 +41,9 @@ app.use(errorHandler);
 const connect = async () => {
   try {
     await connectDB(process.env.MONGODB_URL);
+    console.log("Mongodb connected");
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
   }
 };
 
